@@ -86,4 +86,61 @@ def problems_9():
 
 # 10
 def problems_10():
+    n = int(input())
+    a = [int(i) for i in input().split()]
+    aa = [0 for i in range(0,max(a)+1)]
+    for i in a:
+    aa[i] += 1
+    ans = [sum(aa[max(i-1,0):min(i+2,len(aa)+1)]) for i in range(len(aa))]
+    print(max(ans))
+
+# 11
+def problems_10():
+    n,m = map(int,input().split())
+    a,b = [],[]
+    c,d = [],[]
+    for _ in range(n):
+        i,j = map(int,input().split())
+        a.append(i)
+        b.append(j)
+    for _ in range(m):
+        i,j = map(int,input().split())
+        c.append(i)
+        d.append(j)
+    for i in range(n):
+        cnt = 10**9
+        ans = None
+        for j in range(m):
+            s = abs(a[i]-c[j])+abs(b[i]-d[j])
+            if cnt > s:
+                ans = j
+                cnt = s
+        print(ans+1)
+
+# 12
+def problems_12():
+    h,w = map(int,input().split())
+    a = [input() for _ in range(h)]
+    cnt = []
+    for i in range(h):
+        if a[i]==('.'*w):
+            cnt.append(i)
+    a = [a[i] for i in range(len(a)) if i not in cnt]
+    cnt = []
+    for i in range(w):
+        s = ''
+        for ii in range(len(a)):
+            s += a[ii][i]
+        if s=='.'*len(a):
+            cnt.append(i)
+    for i in range(len(a)):
+        for ii in range(len(a[i])):
+            if ii not in cnt:
+                print(a[i][ii],end='')
+        print('')
+
+# 13
+def problems_13()
     pass
+
+
