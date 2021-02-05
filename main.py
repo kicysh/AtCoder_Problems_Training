@@ -141,6 +141,18 @@ def problems_12():
 
 # 13
 def problems_13()
-    pass
+    n = int(input())
+    txy = [list(map(int,input().split())) for _ in range(n)]
+    ans = 'Yes'
+    pre_t,pre_x,pre_y = 0,0,0
+    for i in range(n):
+        t,x,y = txy[i][0],txy[i][1],txy[i][2]
+        d_t,d_x,d_y = t-pre_t,abs(x-pre_x),abs(y-pre_y)
+        if (d_t>=(d_x+d_y)) and (d_t%2==(d_x+d_y)%2):
+            pre_t,pre_x,pre_y = t,x,y
+        else:
+            ans = 'No'
+            break
+    print(ans)
 
 
