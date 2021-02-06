@@ -90,7 +90,7 @@ def problems_10():
     a = [int(i) for i in input().split()]
     aa = [0 for i in range(0,max(a)+1)]
     for i in a:
-    aa[i] += 1
+        aa[i] += 1
     ans = [sum(aa[max(i-1,0):min(i+2,len(aa)+1)]) for i in range(len(aa))]
     print(max(ans))
 
@@ -140,7 +140,7 @@ def problems_12():
         print('')
 
 # 13
-def problems_13()
+def problems_13():
     n = int(input())
     txy = [list(map(int,input().split())) for _ in range(n)]
     ans = 'Yes'
@@ -155,4 +155,25 @@ def problems_13()
             break
     print(ans)
 
+# 14
+def problem_14():
+    h,w = map(int,input().split())
+    s = ['.'*(w+2)]
+    for i in range(h):
+        s.append('.'+input()+'.')
+    s.append('.'*(w+2))
+
+    ans = 'Yes'
+    for i in range(1,h+1):
+        for ii in range(1,w+1):
+            if s[i][ii] == '#':
+                ss = []
+                for n,m in zip([0,0,1,-1],[-1,1,0,0]):
+                    ss.append(s[i+n][ii+m])
+                if '#' not in ss:
+                    ans = 'No'
+                    break
+        else:
+            continue
+    print(ans)
 
