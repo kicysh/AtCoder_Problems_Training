@@ -86,7 +86,8 @@ def problems_9():
 
 # 10
 def problems_10():
-    n = int(input())
+    # n 
+    int(input())
     a = [int(i) for i in input().split()]
     aa = [0 for i in range(0,max(a)+1)]
     for i in a:
@@ -95,7 +96,7 @@ def problems_10():
     print(max(ans))
 
 # 11
-def problems_10():
+def problems_11():
     n,m = map(int,input().split())
     a,b = [],[]
     c,d = [],[]
@@ -177,3 +178,14 @@ def problem_14():
             continue
     print(ans)
 
+# 15
+def problems_15():
+    s = input()
+    ss = 'keyence'
+    ans = 'NO'
+    for i in range(len(ss)):
+        ii = i - len(ss)
+        if s[:i]==ss[:i] and s[ii:]==ss[ii:]:
+            ans = 'YES'
+            break
+    print(ans)
