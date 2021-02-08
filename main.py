@@ -189,3 +189,22 @@ def problems_15():
             ans = 'YES'
             break
     print(ans)
+
+
+# 16
+def problems_16():
+    pass
+
+
+# 17
+def problems_17():
+    n,T = map(int,input().split())
+    t = list(map(int,input().split()))
+    ans = []
+    for i in range(1,n):
+        if (t[i]-t[i-1])>T:
+            ans.append(T)
+        else:
+            ans.append(t[i]-t[i-1])
+    ans = sum(ans) + T
+    print(ans)
