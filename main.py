@@ -235,3 +235,14 @@ def problems_19():
             if (n-rr*r-gg*g)%b==0:
                 ans += 1
     print(ans)
+
+
+# 20
+def problems_20():
+    n = int(input())
+    ans = set()
+    for _ in range(n):
+        a = {int(input())}
+        ans ^= a
+    print(len(ans))
+
