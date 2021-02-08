@@ -208,3 +208,20 @@ def problems_17():
             ans.append(t[i]-t[i-1])
     ans = sum(ans) + T
     print(ans)
+
+
+# 18
+def problems_18():
+    c = [list(map(int,input().split())) for _ in range(3)]
+    ans = 'Yes'
+    for i in range(2):
+        a = c[0][i+1] - c[0][i]
+        b = c[i+1][0] - c[i][0]
+        for ii in range(1,3):
+            if a==c[ii][i+1]-c[ii][i] and b==c[i+1][ii]-c[i][ii]:
+                pass
+            else:
+                ans='No'
+        else:
+            continue
+    print(ans)
