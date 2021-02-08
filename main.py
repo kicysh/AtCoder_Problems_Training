@@ -225,3 +225,13 @@ def problems_18():
         else:
             continue
     print(ans)
+
+# 19
+def problems_19():
+    r,g,b,n = map(int,input().split())
+    ans = 0
+    for rr in range(n//r+1):
+        for gg in range((n-rr*r)//g+1):
+            if (n-rr*r-gg*g)%b==0:
+                ans += 1
+    print(ans)
