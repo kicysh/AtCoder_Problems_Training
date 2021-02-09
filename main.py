@@ -246,3 +246,19 @@ def problems_20():
         ans ^= a
     print(len(ans))
 
+
+# 21
+def problems_21():
+    n = int(input())
+    a = list(map(int,input().split()))
+    cnt = [0]*n
+    for i in a:
+        cnt[i-1] += 1
+    ans = [0]*n
+    for i in a:
+        s = cnt[i-1]
+        ans[i-1] = s*(s-1)/2
+    ans_sum = sum(ans)
+    for i in a:
+        s = cnt[i-1]
+        print(int(ans_sum-(s-1)))
