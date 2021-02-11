@@ -405,3 +405,15 @@ def problems_32():
             if (y-i*10-ii*5-iii)==0:
                 cnt = [i,ii,iii]
     print('{} {} {}'.format(*cnt))
+
+
+# 33
+def problems_33():
+    ans = ''
+    s = input()
+    for i in s:
+        if i != 'B':
+            ans = ans+i
+        else:
+            ans = ans[:-1]
+    print(ans)
