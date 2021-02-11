@@ -344,3 +344,20 @@ def problems_27():
                 ans = max(n,len(s)+len(t)-len(s[i:]))
                 break
     print(ans)
+
+
+# 28
+def problems_28():
+    pass
+
+
+# 29
+def problems_29():
+    s = sorted(input())
+    t = sorted(input(),reverse=True)
+    if s<t:
+        ans='Yes'
+    else:
+        ans='No'
+    print(ans)
+    
