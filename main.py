@@ -309,4 +309,24 @@ def problems_24():
         print(1)
     else:
         print(0)
-        
+
+
+# 25
+def problems_25():
+    pass
+
+
+# 26
+def problems_26():
+    n = int(input())
+    a = list(map(int,input().split()))
+    shift = 0
+    ans = 1
+    for i in range(n-1):
+        if (a[i]-a[i+1])*shift<0:
+            ans += 1
+            shift = 0
+        elif (a[i]-a[i+1])!=0:
+            shift = a[i]-a[i+1]
+    print(ans)
+    
