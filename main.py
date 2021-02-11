@@ -296,4 +296,17 @@ def problems_23():
 
         ans = int(ans)
     print(ans)
-    
+
+
+# 24
+def problems_24():
+    n,a,b = map(int,input().split())
+    ans = 0
+    if (n>1)&(a<=b):
+        ans = (b-a)*(n-2)+1
+        print(ans)
+    elif (n==1)&(a==b):
+        print(1)
+    else:
+        print(0)
+        
