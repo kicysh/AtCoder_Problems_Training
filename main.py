@@ -417,3 +417,18 @@ def problems_33():
         else:
             ans = ans[:-1]
     print(ans)
+
+
+# 34
+def problems_34():
+    import math
+    n,k = map(int,input().split())
+    a = list(map(int,input().split()))
+    index = a.index(1)
+    ans = math.floor(index/(k-1))+math.floor((n-index-1)/(k-1))
+    d = ((index%(k-1))+((n-index-1)%(k-1))+1)
+    if d>k:
+        ans += 2
+    elif d!=1:
+        ans += 1
+    print(ans)
