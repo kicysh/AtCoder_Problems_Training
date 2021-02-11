@@ -387,3 +387,21 @@ def problems_31():
         print('Yes')
     else:
         print('No')
+
+
+# 32
+def problems_32():
+    n,y = map(int,input().split())
+    cnt = [-1,-1,-1]
+    y = y/(10**3)
+    for i in range(n+1):
+        if (y-i*10)<0:
+            break
+        for ii in range(n-i+1):
+            if (y-i*10-ii*5)<0:
+                break
+            iii = n-i-ii
+            #print('{}:{}:{}'.format(i,ii,iii))
+            if (y-i*10-ii*5-iii)==0:
+                cnt = [i,ii,iii]
+    print('{} {} {}'.format(*cnt))
