@@ -329,4 +329,18 @@ def problems_26():
         elif (a[i]-a[i+1])!=0:
             shift = a[i]-a[i+1]
     print(ans)
-    
+
+
+# 27
+def problems_27():
+    n = int(input())
+    s = input()
+    t = input()
+    ans = n
+    if (len(s)+len(t)>n):
+        ans = len(s)+len(t)
+        for i in range(min(len(s),len(t))):
+            if s[i:] == t[:len(t)-i]:
+                ans = max(n,len(s)+len(t)-len(s[i:]))
+                break
+    print(ans)
