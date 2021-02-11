@@ -274,3 +274,26 @@ def problems_22():
             cnt += 1
         ans += 0.5**cnt/n
     print(ans)
+
+# 23
+def problems_23():
+    n,m = map(int,input().split())
+    ans = 'a'*n
+    for _ in range(m):
+        s,c = map(int,input().split())
+        if ans[s-1]=='a':
+            ans = '{}{}{}'.format(ans[:s-1],c,ans[s:])
+        elif ans[s-1]!=str(c):
+            ans = -1
+            break
+    if (n!=1)&(ans!=-1):
+        if ans[0]=='0':
+            ans = -1    
+    if ans!=-1:
+        if (n!=1)&(ans[0]=='a'):
+            ans = '{}{}'.format('1',ans[1:])
+        ans = ans.replace('a','0')
+
+        ans = int(ans)
+    print(ans)
+    
