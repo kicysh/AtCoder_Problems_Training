@@ -360,4 +360,14 @@ def problems_29():
     else:
         ans='No'
     print(ans)
-    
+
+
+# 30
+def problems_30():
+    n,m = map(int,input().split())
+    if (n>=2)&(m>=2):
+        print((n-2)*(m-2))
+    elif max(n,m)>1:
+        print(max(n,m)-2)
+    else:
+        print(1)
