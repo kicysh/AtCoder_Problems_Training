@@ -371,3 +371,19 @@ def problems_30():
         print(max(n,m)-2)
     else:
         print(1)
+
+# 31
+def problems_31():
+    n = int(input())
+    a = list(map(int,input().split()))
+    cnt = [0,0,0]
+    for i in range(len(a)):
+        s = a[i]
+        if s%4==0:
+            cnt[2]+=1
+        elif s%2!=0:
+            cnt[0] += 1
+    if cnt[2]>=(cnt[0]-n%2):
+        print('Yes')
+    else:
+        print('No')
