@@ -485,3 +485,13 @@ def problem_39():
     if (k>=a+2)&(a+2<b):
         ans = max(ans,b + (k-a-2)//2*(b-a) + (k-a-2)%2)
     print(ans)
+
+# 40
+def problem_40():
+    n,m = map(int,input().split())
+    x = sorted(list(map(int,input().split())))
+    x_diff = sorted([x[i+1]-x[i] for i in range(len(x)-1)])
+    if n>=m:
+        print(0)
+    else:
+        print(sum(x_diff[:m-n]))
