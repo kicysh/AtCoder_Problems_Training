@@ -476,3 +476,12 @@ def problems_38():
             ans = 'NO'
             break
     print(ans)
+
+# 39
+def problem_39():
+    k,a,b = map(int,input().split())
+    k = k+1
+    ans = k
+    if (k>=a+2)&(a+2<b):
+        ans = max(ans,b + (k-a-2)//2*(b-a) + (k-a-2)%2)
+    print(ans)
