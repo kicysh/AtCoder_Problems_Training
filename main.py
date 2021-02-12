@@ -443,3 +443,14 @@ def problems_35():
     a -=1
     ans = b-a-(b//c-a//c+b//d-a//d-(b//e-a//e))
     print(ans)
+
+# 36
+def problems_36():
+    import math
+    N,X = map(int,input().split())
+    x = list(map(int,input().split()))
+    x = [abs(i-X) for i in x]
+    ans = x[0]
+    for i in x[1:]:
+        ans = math.gcd(ans,i)
+    print(ans)
