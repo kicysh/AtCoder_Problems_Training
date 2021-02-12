@@ -447,10 +447,32 @@ def problems_35():
 # 36
 def problems_36():
     import math
-    N,X = map(int,input().split())
+    _,X = map(int,input().split())
     x = list(map(int,input().split()))
     x = [abs(i-X) for i in x]
     ans = x[0]
     for i in x[1:]:
         ans = math.gcd(ans,i)
+    print(ans)
+
+
+# 37
+def problems_37():
+    pass
+
+
+# 38
+def problems_38():
+from collections import Counter
+    n = int(input())
+    d = list(map(int,input().split()))
+    m = int(input())
+    t = list(map(int,input().split()))
+    dd = Counter(d)
+    tt = Counter(t)
+    ans = 'YES'
+    for k,v in zip(tt.keys(),tt.values()):
+        if dd[k]<v:
+            ans = 'NO'
+            break
     print(ans)
