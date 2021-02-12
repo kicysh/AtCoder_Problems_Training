@@ -464,9 +464,9 @@ def problems_37():
 # 38
 def problems_38():
     from collections import Counter
-    n = int(input())
+    _ = int(input())
     d = list(map(int,input().split()))
-    m = int(input())
+    _ = int(input())
     t = list(map(int,input().split()))
     dd = Counter(d)
     tt = Counter(t)
