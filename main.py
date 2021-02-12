@@ -432,3 +432,14 @@ def problems_34():
     elif d!=1:
         ans += 1
     print(ans)
+
+
+# 35
+def problems_35():
+    import math
+    a,b,c,d = map(int,input().split())
+    e = math.gcd(c,d)
+    e = int(c*d/e)
+    a -=1
+    ans = b-a-(b//c-a//c+b//d-a//d-(b//e-a//e))
+    print(ans)
