@@ -584,3 +584,18 @@ def problem_49():
     else:
         s = sorted(s,reverse=True)
         print(s[0]*s[1])
+
+
+# 50
+def problem_50():
+    L,R = map(int,input().split())
+    d = 2019
+    L -= 1
+    ans = 2019
+    if (L//3<R//3)&(L//673<R//673):
+        print(0)
+    else:
+        for i in range(L%d+1,R%d+1):
+            for j in range(i+1,R%d+1):
+                ans = min(ans,(i*j)%d)
+        print(ans)
