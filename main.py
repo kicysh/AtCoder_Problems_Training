@@ -565,3 +565,22 @@ def problem_48():
     else:
         cnt = 0
     print('{} {}'.format(w*h/2,cnt))
+
+
+# 49
+def problem_49():
+    from collections import Counter
+    n = int(input())
+    a = list(map(int,input().split()))
+    c = Counter(a)
+    s = []
+    for key,val in c.items():
+        if val>=2:
+            s.append(key)
+            if val>=4:
+                s.append(key)
+    if len(s)<2:
+        print(0)
+    else:
+        s = sorted(s,reverse=True)
+        print(s[0]*s[1])
