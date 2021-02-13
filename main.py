@@ -599,3 +599,13 @@ def problem_50():
             for j in range(i+1,R%d+1):
                 ans = min(ans,(i*j)%d)
         print(ans)
+
+
+# 51
+def problem_51():
+    n = int(input())
+    x = list(map(int,input().split()))
+    xx = sorted(x)
+    m,mm = xx[(n-1)//2],xx[(n-1)//2+1]
+    for i in x:
+        print(m if m<i else mm)
