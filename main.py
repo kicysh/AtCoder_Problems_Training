@@ -495,3 +495,20 @@ def problem_40():
         print(0)
     else:
         print(sum(x_diff[:m-n]))
+
+
+# 41
+def problem_41():
+    pass
+
+
+# 42
+def problem_42():
+    s = input()
+    ans = []
+    for si in range(len(s)):
+        if s[si]=='U':
+            ans.append(si*2+(len(s)-si-1))
+        else:
+            ans.append(si+(len(s)-si-1)*2)
+    print(sum(ans))
