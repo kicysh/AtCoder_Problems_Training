@@ -609,3 +609,21 @@ def problem_51():
     m,mm = xx[(n-1)//2],xx[(n-1)//2+1]
     for i in x:
         print(m if m<i else mm)
+
+
+# 52
+def problem_52():
+    n = int(input())
+    ba = []
+    for _ in [0]*n:
+        a,b = map(int,input().split())
+        ba.append([b,a])
+    ba = sorted(ba)
+    ans = 'Yes'
+    t = 0
+    for bai in ba:
+        t += bai[1]
+        if bai[0]<t:
+            ans = 'No'
+            break
+    print(ans)
