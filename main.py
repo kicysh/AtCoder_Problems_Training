@@ -519,3 +519,15 @@ def problem_43():
     x = int(input())
     ans = min(x,round((x*2)**0.5))
     print(ans)
+
+
+# 44
+def problem_44():
+    n = int(input())
+    a = list(map(int,input().split()))
+    n_d_2 = n%2
+    ans_0 = [a[i] for i in range(n) if n_d_2==i%2]
+    ans_1 = [a[i] for i in range(n-1,-1,-1) if (n_d_2+1)%2==i%2]
+    ans = ans_1 + ans_0
+    print(('{} '*(n-1)+'{}').format(*ans))
+
