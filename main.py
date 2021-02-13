@@ -531,3 +531,10 @@ def problem_44():
     ans = ans_1 + ans_0
     print(('{} '*(n-1)+'{}').format(*ans))
 
+
+# 45
+def problem_45():
+    n,m = map(int,input().split())
+    ans = min(n,m//2)
+    ans +=(m-ans*2)//4
+    print(ans)
