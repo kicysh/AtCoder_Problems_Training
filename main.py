@@ -512,3 +512,10 @@ def problem_42():
         else:
             ans.append(si+(len(s)-si-1)*2)
     print(sum(ans))
+
+
+# 43
+def problem_43():
+    x = int(input())
+    ans = min(x,round((x*2)**0.5))
+    print(ans)
