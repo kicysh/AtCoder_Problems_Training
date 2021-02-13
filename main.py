@@ -551,3 +551,17 @@ def problem_46():
         print('NO')
     else:
         print('YES')
+
+# 47
+def problem_47():
+    pass
+
+
+# 48
+def problem_48():
+    w,h,x,y = map(int,input().split())
+    if (x*2==w) & (y*2==h):
+        cnt = 1
+    else:
+        cnt = 0
+    print('{} {}'.format(w*h/2,cnt))
