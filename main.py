@@ -570,7 +570,7 @@ def problem_48():
 # 49
 def problem_49():
     from collections import Counter
-    n = int(input())
+    _ = int(input())
     a = list(map(int,input().split()))
     c = Counter(a)
     s = []
