@@ -627,3 +627,14 @@ def problem_52():
             ans = 'No'
             break
     print(ans)
+
+
+# 53
+def problem_53():
+    _ = int(input())
+    a = list(map(int,input().split()))
+    a = [0]+a+[0]
+    c = list(abs(a[i+1]-a[i]) for i in range(0,len(a)-1))
+    s = sum(c)
+    for i in range(1,len(a)-1):
+        print(s-c[i-1]-c[i]+abs(a[i+1]-a[i-1]))
