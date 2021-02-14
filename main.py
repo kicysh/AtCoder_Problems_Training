@@ -687,3 +687,15 @@ def problem_57():
         ans += (ii-i)*(ii-i+1)//2
         i=ii
     print(ans)
+
+
+# 58
+def problem_58():
+    _,a,b,c,d = map(int,input().split())
+    s = input()
+    ans = 'Yes'
+    if '##' in s[a-1:max(c,d)]:
+        ans='No'
+    if (c>d)&('...' not in s[b-2:min(c,d)+1]):
+        ans='No'
+    print(ans)
