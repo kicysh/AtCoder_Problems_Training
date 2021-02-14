@@ -699,3 +699,19 @@ def problem_58():
     if (c>d)&('...' not in s[b-2:min(c,d)+1]):
         ans='No'
     print(ans)
+
+# 59
+def problem_59():
+    n = int(input())
+    p = list(map(int,input().split()))
+    ans,cnt = 0,0
+    for i in range(n):
+        if (i+1)==p[i]:
+            if cnt==0:
+                cnt = 1
+                ans += 1
+            else:
+                cnt=0
+        else:
+            cnt = 0
+    print(ans)
