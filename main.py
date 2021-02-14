@@ -638,3 +638,17 @@ def problem_53():
     s = sum(c)
     for i in range(1,len(a)-1):
         print(s-c[i-1]-c[i]+abs(a[i+1]-a[i-1]))
+
+
+# 54
+def problem_54():
+    n,c,k = map(int,input().split())
+    t = sorted(list(int(input()) for _ in [0]*n))
+    ans = 0
+    time,cnt = t[0]-k,c
+    for ti in t:
+        if (cnt==c) | (k<ti-time):
+            cnt,time = 0,ti
+            ans +=1
+        cnt +=1
+    print(ans)
