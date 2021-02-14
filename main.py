@@ -665,3 +665,25 @@ def problem_55():
         if b==n:
             sb.add(a)
     print('POSSIBLE' if len(sa&sb)>0 else 'IMPOSSIBLE')
+
+
+# 56
+def problem_56():
+    pass
+
+
+# 57
+def problem_57():
+    n = int(input())
+    s = sorted(list(sorted(input()) for _ in [0]*n))
+    ans = 0
+    i = 0
+    while i < n-1:
+        for ii in range(i+1,n):
+            if s[i] != s[ii]:
+                ans += (ii-i-1)*(ii-i)//2
+                i = ii
+                break
+        ans += (ii-i)*(ii-i+1)//2
+        i=ii
+    print(ans)
