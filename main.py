@@ -652,3 +652,16 @@ def problem_54():
             ans +=1
         cnt +=1
     print(ans)
+
+
+# 55
+def problem_55():
+    n,m = map(int,input().split())
+    ab = list(list(map(int,input().split())) for _ in range(m))
+    sa,sb = set(),set()
+    for a,b in ab:
+        if a==1:
+            sa.add(b)
+        if b==n:
+            sb.add(a)
+    print('POSSIBLE' if len(sa&sb)>0 else 'IMPOSSIBLE')
