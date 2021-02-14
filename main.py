@@ -715,3 +715,21 @@ def problem_59():
         else:
             cnt = 0
     print(ans)
+
+
+# 60
+def problem_60():
+    n = int(input())
+    d = {'M':0,'A':0,'R':0,'C':0,'H':0}
+    for _ in [0]*n:
+        s = input()
+        if s[0] in d.keys():
+            d[s[0]] += 1
+
+    d = list(d.values())
+    ans = 0
+    for i in range(len(d)):
+        for ii in range(i+1,len(d)):
+            for iii in range(ii+1,len(d)):
+                ans += d[i]*d[ii]*d[iii]
+    print(ans)
