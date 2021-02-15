@@ -766,3 +766,20 @@ def problem_62():
     for aa in a[2:]:
         ans = math.gcd(ans,aa)
     print(ans)
+
+
+# 63
+def problem_63():
+    w,h,n = map(int,input().split())
+    xx,yy = 0,0
+    xya = list(list(map(int,input().split())) for _  in [0]*n)
+    for x,y,a in xya:
+        if a==1:
+            xx=max(xx,x)
+        elif a==2:
+            w=min(w,x)
+        elif a==3:
+            yy=max(yy,y)
+        else:
+            h=min(h,y)
+    print((w-xx)*(h-yy) if w-xx>0 and h-yy>0 else 0)
