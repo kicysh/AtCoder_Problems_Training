@@ -783,3 +783,17 @@ def problem_63():
         else:
             h=min(h,y)
     print((w-xx)*(h-yy) if w-xx>0 and h-yy>0 else 0)
+
+
+# 64
+def problem_64():
+    from collections import Counter as cntr
+    _ = input()
+    c = cntr(list(map(int,input().split())))
+    ans = 0
+    for k,v in c.items():
+        if k<=v:
+            ans+=v-k
+        else:
+            ans+=v
+    print(ans)
