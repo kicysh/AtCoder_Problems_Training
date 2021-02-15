@@ -797,3 +797,17 @@ def problem_64():
         else:
             ans+=v
     print(ans)
+
+
+# 65
+def problem_65():
+    import math
+    n,m = map(int,input().split())
+    s,t = input(),input()
+    d = math.gcd(n,m)
+    ans=n*m//d
+    for i in range(d):
+        if s[i*n//d]!=t[i*m//d]:
+            ans = -1
+            break
+    print(ans)
