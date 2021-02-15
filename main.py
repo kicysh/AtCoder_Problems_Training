@@ -760,7 +760,7 @@ def problem_61():
 # 62
 def problem_62():
     import math
-    n = int(input())
+    _ = int(input())
     a = list(map(int,input().split()))
     ans = math.gcd(a[0],a[1])
     for aa in a[2:]:
