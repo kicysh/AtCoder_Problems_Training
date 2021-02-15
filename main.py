@@ -811,3 +811,13 @@ def problem_65():
             ans = -1
             break
     print(ans)
+
+
+# 66
+def problem_66():
+    n = int(input())
+    ab = list(list(map(int,input().split())) for _ in [0]*n)
+    ans = 0
+    for a,b in ab[::-1]:
+        ans += (b-a-ans)%b
+    print(ans)
