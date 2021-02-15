@@ -733,3 +733,25 @@ def problem_60():
             for iii in range(ii+1,len(d)):
                 ans += d[i]*d[ii]*d[iii]
     print(ans)
+
+
+# 61
+def problem_61():
+    s = input()
+    qn = int(input())
+    addtxt = [[],[]]
+    rvs = False
+    for _ in [0]*qn:
+        q = input()
+        if q[0]=='1':
+            rvs = (True,False)[rvs]
+        else:
+            _,f,c = q.split()
+            if rvs:
+                addtxt[2-int(f)].append(c)
+            else:
+                addtxt[int(f)-1].append(c)
+    if rvs:
+        print(''.join(addtxt[1][::-1])+''.join(s[::-1])+''.join(addtxt[0]))
+    else:
+        print(''.join(addtxt[0][::-1])+''.join(s)+''.join(addtxt[1]))
