@@ -755,3 +755,14 @@ def problem_61():
         print(''.join(addtxt[1][::-1])+''.join(s[::-1])+''.join(addtxt[0]))
     else:
         print(''.join(addtxt[0][::-1])+''.join(s)+''.join(addtxt[1]))
+
+
+# 62
+def problem_62():
+    import math
+    n = int(input())
+    a = list(map(int,input().split()))
+    ans = math.gcd(a[0],a[1])
+    for aa in a[2:]:
+        ans = math.gcd(ans,aa)
+    print(ans)
