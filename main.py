@@ -834,3 +834,17 @@ def problem_67():
             break
         abc[s],s = abc[s][1:],abc[s][0]
     print(s.upper())
+
+
+# 68
+def problem_68():
+    h,w = map(int,input().split())
+    a = list(input()+'.' for _ in [0]*h)+['.'*(w+1)]
+    cnt=0
+    for hi in range(h):
+        for wi in range(w):
+            if (a[hi][wi]=='#') & (a[hi][wi+1]=='#'):
+                cnt+=1
+            if (a[hi][wi]=='#') & (a[hi+1][wi]=='#'):
+                cnt+=1
+    print('Possible' if cnt==(h+w-2) else 'Impossible')
