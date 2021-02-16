@@ -821,3 +821,16 @@ def problem_66():
     for a,b in ab[::-1]:
         ans += (b-a-ans)%b
     print(ans)
+
+
+# 67
+def problem_67():
+    abc = {'a':input(),'b':input(),'c':input()}
+    s = 'a'
+    cnt = len(abc[s])
+    while True:
+        cnt = len(abc[s])-1
+        if cnt<0:
+            break
+        abc[s],s = abc[s][1:],abc[s][0]
+    print(s.upper())
