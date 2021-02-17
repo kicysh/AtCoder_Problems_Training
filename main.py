@@ -868,3 +868,15 @@ def problem_70():
     if y-x>0:
         ans = min(ans,y-x)
     print(ans)
+
+
+# 71: arc078_a
+def problem_71():
+    _ = int(input())
+    a = list(map(int,input().split()))
+    ss,aa = sum(a[:-1]),a[-1]
+    ans = abs(ss-aa)
+    for ai in a[1:-1][::-1]:
+        ss,aa = ss-ai,aa+ai
+        ans = min(ans,abs(ss-aa))
+    print(ans)
