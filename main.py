@@ -946,3 +946,10 @@ def problem_76():
             cnt+=1
         ans = min(cnt,ans)
     print(ans)
+
+
+# 77: arc085_a
+def problem_77():
+    n,m = map(int,input().split())
+    a = 1-(1/2)**m
+    print(round((100*n+1800*m)*(1/2)**m/(1-a)**2))
