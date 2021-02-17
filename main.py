@@ -891,3 +891,9 @@ def problem_72():
     for ti in t[1:]:
         ans = ans*ti//math.gcd(ans,ti)
     print(ans)
+
+
+# 73: panasonic2020_c
+def problem_73():
+    a,b,c = map(int,input().split())
+    print('Yes' if (c-a-b>0)&(4*a*b < (c-a-b)**2) else 'No')
