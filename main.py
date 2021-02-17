@@ -856,3 +856,15 @@ def problem_69():
     n=int(input())
     ae=[int(input()) for _ in [0]*5]
     print(4+math.ceil(n/min(ae)))
+
+
+# 70: agc008_a
+def problem_70():
+    x,y = map(int,input().split())
+    if abs(y)-abs(x)>0:
+        ans = abs(y)-abs(x)+[x<0,y<0].count(True)
+    else:
+        ans = abs(x)-abs(y)+[x>0,y>0].count(True)
+    if y-x>0:
+        ans = min(ans,y-x)
+    print(ans)
