@@ -848,3 +848,11 @@ def problem_68():
             if (a[hi][wi]=='#') & (a[hi+1][wi]=='#'):
                 cnt+=1
     print('Possible' if cnt==(h+w-2) else 'Impossible')
+
+
+# 69: abc123_c
+def problem_69():
+    import math
+    n=int(input())
+    ae=[int(input()) for _ in [0]*5]
+    print(4+math.ceil(n/min(ae)))
