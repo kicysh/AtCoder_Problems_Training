@@ -913,3 +913,21 @@ def problem_74():
     for k in sorted(ans.keys()):
         c += k*ans[k]
     print(c)
+
+
+# 75: abc149_d
+def problem_75():
+    _,k = map(int,input().split())
+    r,s,p = map(int,input().split())
+    score = {'r':p,'s':r,'p':s}
+    t = input()
+    ans = 0
+    for ki in range(k):
+        tp = ''
+        for ti in t[ki::k]:
+            if tp==ti:
+                tp = ''
+            else:
+                tp = ti
+                ans += score[ti]
+    print(ans)
