@@ -931,3 +931,18 @@ def problem_75():
                 tp = ti
                 ans += score[ti]
     print(ans)
+
+
+# 76: arc098_a
+def problem_76():
+    _=int(input())
+    s=input()
+    cnt=s[1:].count('E')
+    ans=cnt
+    for si in range(1,len(s)):
+        if s[si]=='E':
+            cnt-=1
+        if s[si-1]=='W':
+            cnt+=1
+        ans = min(cnt,ans)
+    print(ans)
