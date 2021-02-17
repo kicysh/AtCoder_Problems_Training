@@ -880,3 +880,14 @@ def problem_71():
         ss,aa = ss-ai,aa+ai
         ans = min(ans,abs(ss-aa))
     print(ans)
+
+
+# 72: abc070_c
+def problem_72():
+    import math
+    n = int(input())
+    t = list(int(input()) for _ in [0]*n)
+    ans = t[0]
+    for ti in t[1:]:
+        ans = ans*ti//math.gcd(ans,ti)
+    print(ans)
