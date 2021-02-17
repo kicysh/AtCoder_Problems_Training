@@ -897,3 +897,19 @@ def problem_72():
 def problem_73():
     a,b,c = map(int,input().split())
     print('Yes' if (c-a-b>0)&(4*a*b < (c-a-b)**2) else 'No')
+
+
+# 74: arc071_a
+def problem_74():
+    from collections import Counter
+    n = int(input())
+    ans = Counter(input())
+    for _ in [0]*(n-1):
+        s=Counter(input())
+        for k in ans.keys():
+            s.setdefault(k,0)
+            ans[k] = min(ans[k],s[k])
+    c = ''
+    for k in sorted(ans.keys()):
+        c += k*ans[k]
+    print(c)
