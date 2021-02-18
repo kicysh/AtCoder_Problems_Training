@@ -995,3 +995,15 @@ def problem_80():
     for v in s.values():
         ans = (ans*(v+1))%d
     print(ans-1)
+
+
+# 81: arc063_a
+def problem_81():
+    s=input()
+    ans=0
+    tmp = s[0]
+    for si in s[1:]:
+        if tmp!=si:
+            ans +=1
+            tmp = si
+    print(ans)
