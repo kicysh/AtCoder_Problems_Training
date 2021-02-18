@@ -1007,3 +1007,12 @@ def problem_81():
             ans +=1
             tmp = si
     print(ans)
+
+
+# 82: arc059_a
+def problem_82():
+    _ = int(input())
+    a = list(map(int,input().split()))
+    y = round(sum(a)/len(a))
+    ans = [(x-y)**2 for x in a]
+    print(sum(ans))
