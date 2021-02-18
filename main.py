@@ -953,3 +953,33 @@ def problem_77():
     n,m = map(int,input().split())
     a = 1-(1/2)**m
     print(round((100*n+1800*m)*(1/2)**m/(1-a)**2))
+
+
+# 78:
+def problem_78():
+    pass
+
+
+# 79: arc076_a
+def problem_79():
+    n,m = map(int,input().split())
+    d = 10**9+7
+    if abs(n-m)>1:
+        print(0)
+    elif n==m:
+        ans = 1
+        for i in range(1,min(n,m)+1):
+            ans *=i
+            ans %=d
+        ans = (ans**2)%d    
+        print((ans*2)%d)
+    else:
+        ans = 1
+        for i in range(1,min(n,m)+1):
+            ans *=i
+            ans %=d
+        ans = (ans**2)%d
+        for i in range(min(n,m)+1,max(n,m)+1):
+            ans *=i
+            ans %=d
+        print(ans%d)
