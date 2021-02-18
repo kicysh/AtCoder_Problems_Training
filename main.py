@@ -983,3 +983,15 @@ def problem_79():
             ans *=i
             ans %=d
         print(ans%d)
+
+
+# 80: agc031_a
+def problem_80():
+    from collections import Counter
+    _=int(input())
+    s=Counter(input())
+    d = 10**9+7
+    ans = 1
+    for v in s.values():
+        ans = (ans*(v+1))%d
+    print(ans-1)
