@@ -1041,3 +1041,19 @@ def problem_84():
                     break
             ans += cnt
     print(ans)
+
+
+# 85: agc022_a
+def problem_85():
+    s = input()
+    d = 'abcdefghijklmnopqrstuvwxyz'
+    if s==d[::-1]:
+        print(-1)
+    elif len(s)==26:
+        for i in range(len(s)-1,-1,-1):
+            if max(s[i:])!=s[i]:
+                ss = sorted(s[i:])
+                print(s[:i]+ss[ss.index(s[i])+1])
+                break
+    else:
+        print(s+min(set(d)-set(s)))
