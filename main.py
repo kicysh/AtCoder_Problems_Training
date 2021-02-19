@@ -1016,3 +1016,28 @@ def problem_82():
     y = round(sum(a)/len(a))
     ans = [(x-y)**2 for x in a]
     print(sum(ans))
+
+
+# 83:
+def problem_83():
+    pass
+
+
+# 84: abc143_d
+# this scripts is TOO LATE!
+def problem_84():
+    from collections import Counter
+    n = int(input())
+    l = sorted(list(map(int,input().split())))
+    ans = 0
+    for i in range(n-2):
+        cnt = 0
+        for ii in range(i+1,n-1):
+            cnt = max(0,cnt-1)
+            for iii in range(ii+1+cnt,n):
+                if (l[i]+l[ii])>l[iii]:
+                    cnt += 1
+                else:
+                    break
+            ans += cnt
+    print(ans)
