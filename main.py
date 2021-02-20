@@ -1057,3 +1057,34 @@ def problem_85():
                 break
     else:
         print(s+min(set(d)-set(s)))
+
+
+# 86: agc035_a
+def problem_86():
+    n = int(input())
+    a = list(map(int,input().split()))
+    if a == [0]*n:
+        print('Yes')
+    elif n%3==0:
+        sa = set(a)
+        if (len(sa)>3) or (len(sa)<2):
+            print('No')
+        else:
+            sa = list(sa)
+            if len(sa)==3:
+                if (a.count(sa[0])==n//3)&(a.count(sa[1])==n//3)&(a.count(sa[2])==n//3)&(sa[0]^sa[1]==sa[2]):
+                    print('Yes')
+                else:
+                    print('No')
+            else:
+                if (a.count(sa[0])%(n//3)==0)&(a.count(sa[1])%(n//3)==0):
+                    x = [sa[0],sa[1]][a.count(sa[0])<a.count(sa[1])]
+                    y = [sa[0],sa[1]][a.count(sa[0])>a.count(sa[1])]
+                    if x^x==y:
+                        print('Yes')
+                    else:
+                        print('No')
+                else:
+                    print('No')
+    else:
+        print('No')
