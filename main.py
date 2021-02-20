@@ -1088,3 +1088,28 @@ def problem_86():
                     print('No')
     else:
         print('No')
+
+
+# 87: keyence2019_c
+def problem_87():
+    _ = int(input())
+    a = list(map(int,input().split()))
+    b = list(map(int,input().split()))
+    diff = sorted([ai-bi for ai,bi in zip(a,b)])
+    if sum(diff)<0:
+        print(-1)
+    else:
+        cnt,ans = 0,0
+        for i in diff:
+            if i<0:
+                cnt +=i
+                ans +=1
+            else:
+                break
+        for i in diff[::-1]:
+            if cnt>=0:
+                break
+            else:
+                cnt +=i
+                ans +=1
+        print(ans)
