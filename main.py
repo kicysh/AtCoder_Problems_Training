@@ -1144,7 +1144,7 @@ def problem_89():
     print(len(red))
 
 
-# 90: 
+# 90: abc122_c
 def problem_90():
     n,q = map(int,input().split())
     s = input().replace('AC','01')
@@ -1160,3 +1160,13 @@ def problem_90():
     ir = list(list(map(int,input().split())) for _ in [0]*q)
     for i,r in ir:
         print(c[r-1]//2-c[i-1]//2)
+
+
+# 91: abc051_b
+def problem_91():
+    k,s = map(int,input().split())
+    ans = 0
+    for z in range(max(0,s-2*k),min(s,k)+1):
+        ss = s-z
+        ans += min(ss,k)+1-max(0,ss-k)
+    print(ans)
