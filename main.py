@@ -1124,3 +1124,21 @@ def problem_88():
         print((x//11)*2+1)
     else:
         print((x//11)*2)
+
+
+# 89: agc002_b
+def problem_89():
+    n,m = map(int,input().split())
+    c = [1]*n
+    xy = list(list(map(int,input().split())) for _ in [0]*m)
+    red = set([0])
+    for x,y in xy:
+        if (x-1) in red:
+            if c[x-1]>1:
+                red.add(y-1)
+            else:
+                red.remove(x-1)
+                red.add(y-1)
+        c[x-1] -=1
+        c[y-1] +=1
+    print(len(red))
