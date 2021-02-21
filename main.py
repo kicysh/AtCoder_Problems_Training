@@ -1142,3 +1142,21 @@ def problem_89():
         c[x-1] -=1
         c[y-1] +=1
     print(len(red))
+
+
+# 90: 
+def problem_90():
+    n,q = map(int,input().split())
+    s = input().replace('AC','01')
+    c = [0]
+    for si in range(n):
+        if s[si]=='0':
+            c.append(c[-1]+1)
+        elif s[si]=='1':
+            c.append(c[-1]+1)
+        else:
+            c.append(c[-1])
+    c = c[1:]
+    ir = list(list(map(int,input().split())) for _ in [0]*q)
+    for i,r in ir:
+        print(c[r-1]//2-c[i-1]//2)
