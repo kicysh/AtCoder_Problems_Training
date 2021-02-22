@@ -1274,3 +1274,25 @@ def problem_99():
                 ans = 'Yes'
                 break
     print(ans)
+
+
+# 100: arc103_a
+def problem_100():
+    from collections import Counter
+    n = int(input())
+    v = list(map(int,input().split()))
+    c = [Counter(v[::2]), Counter(v[1::2])]
+    cmax = [max(c[0].values()),max(c[1].values())]
+    ans = n -cmax[0] - cmax[1]
+    cc = [[key for key,val in c[i].items() if val==cmax[i]] for i in [0,1]]
+    if len(cc[0])==1 and len(cc[1])==1 and cc[0]==cc[1]:
+        c[0].pop(cc[0][0])
+        c[1].pop(cc[1][0])
+        tmp = [0,0]
+        if c[0]:
+            tmp[0] = max(c[0].values())
+        if c[1]:
+            tmp[1] = max(c[1].values())
+        ccmax = [tmp[0],tmp[1]]
+        ans = min(n-ccmax[0]-cmax[1],n-cmax[0]-ccmax[1])
+    print(ans)
