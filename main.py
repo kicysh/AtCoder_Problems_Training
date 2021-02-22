@@ -1172,8 +1172,13 @@ def problem_91():
     print(ans)
 
 
-# 92: abc128_c
+# 92:
 def problem_92():
+    pass
+
+
+# 93: abc128_c
+def problem_93():
     n,m = map(int,input().split())
     ks = list(list(map(int,input().split())) for _ in [0]*m)
     p = list(map(int,input().split()))
