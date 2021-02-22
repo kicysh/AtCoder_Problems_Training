@@ -1246,3 +1246,19 @@ def problem_97():
         if n>=i:
             print(i)
             n -=i
+
+
+# 98: caddi2018_a
+def problem_98():
+    n,p = map(int,input().split())
+    if n==1:
+        print(p)
+    else:
+        ans = 1
+        for i in range(2,int(p**0.5//1)):
+            cnt = 0
+            while p%i==0:
+                p = p//i
+                cnt += 1
+            ans *= i**(cnt//n)
+        print(ans)
