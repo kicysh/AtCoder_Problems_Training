@@ -1197,3 +1197,16 @@ def problem_93():
         if flag:
             ans +=1
     print(ans)
+
+
+# 94: abc146_c
+def problem_94():
+    a,b,x = map(int,input().split())
+    i,dn = 1,1
+    if (a+b)>x:
+        print(0)
+    else:
+        while not ((a*i+b*dn)<=x and x<(a*i*10+b*(dn+1))):
+            i *= 10
+            dn += 1
+        print(min((x-b*dn)//a,i*10-1) if dn<10 else 10**9)
