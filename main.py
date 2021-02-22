@@ -1170,3 +1170,25 @@ def problem_91():
         ss = s-z
         ans += min(ss,k)+1-max(0,ss-k)
     print(ans)
+
+
+# 92: abc128_c
+def problem_92():
+    n,m = map(int,input().split())
+    ks = list(list(map(int,input().split())) for _ in [0]*m)
+    p = list(map(int,input().split()))
+    ans = 0
+    for i in range(2**n):
+        c = []
+        for ii in range(n-1,-1,-1):
+            if i//(2**ii)==1:
+                c.append(ii+1)
+            i %= 2**ii
+        flag = True
+        for ksi,pi in zip(ks,p):
+            if pi!=len(set(ksi[1:])&set(c))%2:
+                flag = False
+                break
+        if flag:
+            ans +=1
+    print(ans)
