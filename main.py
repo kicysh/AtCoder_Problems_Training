@@ -1210,3 +1210,18 @@ def problem_94():
             i *= 10
             dn += 1
         print(min((x-b*dn)//a,i*10-1) if dn<10 else 10**9)
+
+
+# 95: 
+def problem_95():
+    n,k = map(int,input().split())
+    ab = list(list(map(int,input().split())) for _ in [0]*n)
+    ab.sort()
+    cnt,i = 0,0
+    ans = 0
+    while cnt<k:
+        a,b = ab[i]
+        cnt += b
+        ans = a
+        i += 1
+    print(ans)
