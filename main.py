@@ -1262,3 +1262,15 @@ def problem_98():
                 cnt += 1
             ans *= i**(cnt//n)
         print(ans)
+
+
+# 99: code_festival_2017_quala_b
+def problem_99():
+    n,m,k = map(int,input().split())
+    ans = 'No'
+    for i in range(0,n+1):
+        for ii in range(0,m+1):
+            if k == (m*i + n*ii - i*ii*2):
+                ans = 'Yes'
+                break
+    print(ans)
