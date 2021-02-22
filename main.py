@@ -1212,7 +1212,7 @@ def problem_94():
         print(min((x-b*dn)//a,i*10-1) if dn<10 else 10**9)
 
 
-# 95: 
+# 95: abc061_c
 def problem_95():
     n,k = map(int,input().split())
     ab = list(list(map(int,input().split())) for _ in [0]*n)
