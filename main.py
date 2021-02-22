@@ -1225,3 +1225,24 @@ def problem_95():
         ans = a
         i += 1
     print(ans)
+
+
+# 96:
+def problem_96():
+    pass
+
+
+# 97: codefestival_2016_final_b
+def problem_97():
+    n = int(input())
+    cnt = 0
+    ans = 0
+    for i in range(1,n+1):
+        cnt += i
+        ans = i
+        if cnt>=n:
+            break
+    for i in range(ans,0,-1):
+        if n>=i:
+            print(i)
+            n -=i
