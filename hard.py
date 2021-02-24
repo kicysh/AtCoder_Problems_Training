@@ -60,3 +60,26 @@ def problem_5():
             i += 1
         a.sort(reverse=True)
     print(sum(a))
+
+
+# 6: abc076_c
+def problem_6():
+    s = input()
+    t = input()
+    ans = 'UNRESTORABLE'
+    if len(s)<len(t):
+        print(ans)
+    elif t in s:
+        print(s.replace('?','a'))
+    else:
+        for si in range(len(s)-len(t),-1,-1):
+            flag = True
+            for ti in range(len(t)):
+                if not (t[ti]==s[si+ti] or s[si+ti]=='?'):
+                    flag = False
+                    break
+            if flag:
+                s = s.replace('?','a')
+                ans = s[:si]+t+s[si+len(t):]
+                break
+        print(ans)
