@@ -43,3 +43,20 @@ def problem_2():
 def problem_4():
     a,b,x = map(int,input().split())
     print(b//x-(a-1)//x)
+
+
+# 5: abc141_d
+def problem_5():
+    n,m = map(int,input().split())
+    a = list(map(int,input().split()))
+    a.sort(reverse=True)
+    while m>0:
+        a[0] //= 2
+        m -=1
+        i = 1
+        while m>0 and i<n and a[i]>a[0]:
+            a[i] //=2
+            m -= 1
+            i += 1
+        a.sort(reverse=True)
+    print(sum(a))
