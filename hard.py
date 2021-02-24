@@ -83,3 +83,27 @@ def problem_6():
                 ans = s[:si]+t+s[si+len(t):]
                 break
         print(ans)
+
+
+# 7: abc127_d
+def problem_7():
+    n,m = map(int,input().split())
+    *a, = map(int,input().split())
+    cb = list()
+    for _ in [0]*m:
+        b,c = map(int,input().split())
+        cb.append([c,b])
+    a.sort()
+    cb.sort(reverse=True)
+    cnt = 0
+    for c,b in cb:
+        i = 0
+        while (c>a[cnt+i])&(i<b):
+            a[cnt+i] = c
+            i +=1
+            if (cnt+i)==n:
+                break
+        cnt += i
+        if cnt==n:
+            break
+    print(sum(a))
