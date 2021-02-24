@@ -37,3 +37,9 @@ def problem_2():
         ans += cnt*k*(k-1)//2
         ans %=INF
     print(ans)
+
+
+# 4: abc048_b
+def problem_4():
+    a,b,x = map(int,input().split())
+    print(b//x-(a-1)//x)
