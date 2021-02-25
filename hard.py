@@ -183,3 +183,20 @@ def problem_11():
     if c>1:
         ans += 1
     print(ans)
+
+
+# 12: nikkei2019_2_qual_b
+def problem_12():
+    from collections import Counter
+    n = int(input())
+    *d, = map(int,input().split())
+    INF = 998244353
+    c = Counter(d)
+
+    if len(c.keys())==max(c.keys())+1 and d[0]==0 and c.setdefault(0,0)==1:
+        ans = 1
+        for k in range(max(c.keys())):
+            ans = ans*c[k]**c[k+1]%INF
+        print(ans)
+    else:
+        print(0)
