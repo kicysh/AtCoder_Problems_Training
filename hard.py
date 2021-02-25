@@ -107,3 +107,17 @@ def problem_7():
         if cnt==n:
             break
     print(sum(a))
+
+
+# 8: abc148_e
+def problem_8():
+    n = int(input())
+    if n%2==1:
+        print(0)
+    else:
+        ans = 0
+        d = 10
+        while d<=n:
+            ans += n//d
+            d *=5
+        print(ans)
