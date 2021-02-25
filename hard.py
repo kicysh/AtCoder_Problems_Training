@@ -121,3 +121,25 @@ def problem_8():
             ans += n//d
             d *=5
         print(ans)
+
+
+# 9: abc054_b
+def problem_9():
+    n,m = map(int,input().split())
+    a = [input() for _ in [0]*n]
+    b = [input() for _ in [0]*m]
+    ans = 'No'
+    flag = False
+    for ai in range(n-m+1):
+        for aj in range(n-m+1):
+            for bi in range(m):
+                if a[ai+bi][aj:aj+m] != b[bi]:
+                    break
+                if bi==m-1:
+                    flag = True
+                    ans='Yes'
+            if flag:
+                break
+        if flag:
+            break
+    print(ans)
