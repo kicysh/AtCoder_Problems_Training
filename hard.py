@@ -143,3 +143,24 @@ def problem_9():
         if flag:
             break
     print(ans)
+
+
+# 10: abc130_d
+def problem_10():
+    n,k = map(int,input().split())
+    *a, = map(int,input().split())
+    s = 0
+    tmp = 0
+    ans = 0
+    for i in range(n):
+        if s<k:
+            for j in range(max(i,tmp),n):
+                s += a[j]
+                tmp = j+1
+                if s>=k:
+                    ans += n-j
+                    break
+        else:
+            ans += n-j
+        s -=a[i]
+    print(ans)
