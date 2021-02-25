@@ -164,3 +164,22 @@ def problem_10():
             ans += n-j
         s -=a[i]
     print(ans)
+
+
+# 11: abc142_d
+def problem_11():
+    import math
+    a,b = map(int,input().split())
+    c = math.gcd(a,b)
+    ans = 1
+    i = 2
+    while i<=round(c**0.5)+1:
+        if c%i==0:
+            ans += 1
+            c //=i
+            while c%i==0:
+                c //= i
+        i += 1
+    if c>1:
+        ans += 1
+    print(ans)
