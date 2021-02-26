@@ -200,3 +200,24 @@ def problem_12():
         print(ans)
     else:
         print(0)
+
+
+# 13: sumitb2019_d
+def problem_13():
+    n = int(input())
+    s = input()
+    ans = 0
+    si = set()
+    for i in range(n-2):
+        sj = set()
+        if s[i] in si:
+            continue
+        else:
+            si.add(s[i])
+        for j in range(i+1,n-1):
+            if s[j] in sj:
+                continue
+            else:
+                sj.add(s[j])
+                ans += len(set(s[j+1:]))
+    print(ans)
