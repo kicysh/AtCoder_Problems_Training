@@ -188,7 +188,7 @@ def problem_11():
 # 12: nikkei2019_2_qual_b
 def problem_12():
     from collections import Counter
-    n = int(input())
+    _ = int(input())
     *d, = map(int,input().split())
     INF = 998244353
     c = Counter(d)
@@ -221,3 +221,12 @@ def problem_13():
                 sj.add(s[j])
                 ans += len(set(s[j+1:]))
     print(ans)
+
+
+# 15:
+def problem_15():
+    _ = int(input())
+    *a, = map(int,input().split())
+    cnt = [ai for ai in a if ai<0]
+    a = [abs(ai) for ai in a]
+    print(sum(a)-[0,min(a)*2][len(cnt)%2])
