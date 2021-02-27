@@ -223,10 +223,30 @@ def problem_13():
     print(ans)
 
 
-# 15:
+# 15: abc125_d
 def problem_15():
     _ = int(input())
     *a, = map(int,input().split())
     cnt = [ai for ai in a if ai<0]
     a = [abs(ai) for ai in a]
     print(sum(a)-[0,min(a)*2][len(cnt)%2])
+
+
+# 17: diverta2019_c
+def problem_17():
+    n = int(input())
+    ans = 0
+    a,b,c = 0,0,0
+    for _ in [0]*n:
+        s = input()
+        ans += s.count('AB')
+        if s[-1]=='A':
+            a += 1
+        if s[0]=='B':
+            b += 1
+        if (s[-1]=='A') and (s[0]=='B'):
+            c += 1
+    if (a==c) & (b==c) & (c!=0):
+        print(ans+c-1)
+    else:
+        print(ans+min(a,b))
