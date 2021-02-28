@@ -285,3 +285,20 @@ def problem_19():
         if hi%2==1:
             ans.reverse()
         print(*ans)
+
+
+# 20: abc113_c
+def problem_20():
+    n,m = map(int,input().split())
+    yp = []
+    for _ in [0]*m:
+        p,y = map(int,input().split())
+        yp.append([y,p])
+    q = sorted(yp)
+    c = [1]*n
+    ans = dict()
+    for y,p in q:
+        ans[y] = str(p).zfill(6)+str(c[p-1]).zfill(6)
+        c[p-1]+=1
+    for y,p in yp:
+        print(ans[y])
