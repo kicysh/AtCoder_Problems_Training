@@ -250,3 +250,20 @@ def problem_17():
         print(ans+c-1)
     else:
         print(ans+min(a,b))
+
+
+# 18: abc051_c
+def problem_18():
+    sx,sy,tx,ty = map(int,input().split())
+    x,y = tx-sx,ty-sy
+    ans = 'L'
+    ans = ans+'U'*(y+1)
+    ans = ans+'R'*(x+1)
+    ans = ans+'D'*(y+1)
+    ans = ans+'L'*(x)
+    ans = ans+'U'*(y)
+    ans = ans+'R'*(x+1)
+    ans = ans+'D'*(y+1)
+    ans = ans+'L'*(x+1)
+    ans = ans+'U'
+    print(ans)
