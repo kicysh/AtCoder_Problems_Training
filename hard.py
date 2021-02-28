@@ -267,3 +267,21 @@ def problem_18():
     ans = ans+'L'*(x+1)
     ans = ans+'U'
     print(ans)
+
+
+# 19: arc080_b
+def problem_19():
+    h,w = map(int,input().split())
+    _ = int(input())
+    *a, = map(int,input().split())
+    i = 0
+    for hi in range(h):
+        ans = []
+        for _ in [0]*w:
+            if a[i]==0:
+                i += 1
+            ans.append(i+1)
+            a[i] -=1
+        if hi%2==1:
+            ans.reverse()
+        print(*ans)
