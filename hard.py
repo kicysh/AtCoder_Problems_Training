@@ -302,3 +302,15 @@ def problem_20():
         c[p-1]+=1
     for y,p in yp:
         print(ans[y])
+
+
+# 21: arc095_b
+def problem_21():
+    n = int(input())
+    *a, = map(int,input().split())
+    n = max(a)
+    r = 0
+    for ai in a:
+        if min(ai,n-ai)>min(r,n-r):
+            r = ai
+    print('{} {}'.format(n,r))
