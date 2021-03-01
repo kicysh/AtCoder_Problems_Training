@@ -332,3 +332,19 @@ def problem_23():
         else:
             break
     print('YES' if len(s)==0 else 'NO')
+
+
+# 24: keyence2020_b
+def problem_24():
+    n = int(input())
+    xl = [list(map(int,input().split())) for _ in [0]*n]
+    xl.sort()
+    tmp = xl[0][0] + xl[0][1]
+    ans = 1
+    for x,l in xl[1:]:
+        if (x-l)<tmp:
+            tmp = min(tmp,x+l)
+        else:
+            tmp = x+l
+            ans +=1
+    print(ans)
