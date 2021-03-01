@@ -314,3 +314,21 @@ def problem_21():
         if min(ai,n-ai)>min(r,n-r):
             r = ai
     print('{} {}'.format(n,r))
+
+
+# 23: arc065_a
+def problem_23():
+    s = input()
+    add = ['dream','dreamer','erase','eraser']
+    while len(s)>0:
+        if s.endswith(add[0]):
+            s = s[:-len(add[0])]
+        elif s.endswith(add[1]):
+            s = s[:-len(add[1])]
+        elif s.endswith(add[2]):
+            s = s[:-len(add[2])]
+        elif s.endswith(add[3]):
+            s = s[:-len(add[3])]
+        else:
+            break
+    print('YES' if len(s)==0 else 'NO')
