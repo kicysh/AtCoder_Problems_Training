@@ -348,3 +348,11 @@ def problem_24():
             tmp = x+l
             ans +=1
     print(ans)
+
+
+# 26: codefestival_2016_qualC_b
+def problem_26():
+    k,_ = map(int,input().split())
+    *a, = map(int,input().split())
+    a = max(a)
+    print(0 if a<=(k+1)//2 else (a-(k+1)//2)*2-1)
