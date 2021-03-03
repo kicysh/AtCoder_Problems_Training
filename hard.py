@@ -375,3 +375,16 @@ def problem_28():
             else:
                 ans = min(ans,max(abs(x[i]),abs(x[i+k-1])))
     print(ans)
+
+
+# 29: agc011_b
+def problem_29():
+    n = int(input())
+    *a, = map(int,input().split())
+    a.sort()
+    ans = n
+    for i in range(n-1):
+        if a[i]*2<a[i+1]:
+            ans = n-i-1
+        a[i+1] += a[i]
+    print(ans)
