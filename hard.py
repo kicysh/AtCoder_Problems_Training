@@ -356,3 +356,22 @@ def problem_26():
     *a, = map(int,input().split())
     a = max(a)
     print(0 if a<=(k+1)//2 else (a-(k+1)//2)*2-1)
+
+
+# 28: arc101_a
+def problem_28():
+    n,k = map(int,input().split())
+    *x, = map(int,input().split())
+    ans = 10**9
+    if (x[0]>=0):
+        ans = x[k-1]
+    elif (x[-1]<=0):
+        ans = -x[n-k]
+    else:
+        for i in range(n-k+1):
+            if x[i]*x[i+k-1]<0:
+                ans = min(ans,-x[i]*2+x[i+k-1])
+                ans = min(ans,-x[i]+x[i+k-1]*2)
+            else:
+                ans = min(ans,max(abs(x[i]),abs(x[i+k-1])))
+    print(ans)
