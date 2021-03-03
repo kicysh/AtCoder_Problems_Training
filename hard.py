@@ -388,3 +388,22 @@ def problem_29():
             ans = n-i-1
         a[i+1] += a[i]
     print(ans)
+
+
+# 31: abc134_d
+def problem_31():
+    n = int(input())
+    *a, = map(int,input().split())
+    b = [0]*n
+    for i in range(n-1,-1,-1):
+        if sum(b[i::i+1])%2!=a[i]:
+            b[i] = 1
+    m = 0
+    ans = []
+    for bi in range(n):
+        if b[bi]==1:
+            ans.append(bi+1)
+            m += 1
+    print(m)
+    if m!=0:
+        print(*ans)
