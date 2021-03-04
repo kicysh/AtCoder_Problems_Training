@@ -407,3 +407,30 @@ def problem_31():
     print(m)
     if m!=0:
         print(*ans)
+
+
+# 32: arc067_a
+def problem_32():
+    import math
+    n = int(input())
+    INF = 10**9+7
+    c = [2]
+    d = 2
+    for i in range(3,n+1,2):
+        flag = True
+        for ci in c:
+            if math.gcd(i,ci)!=1:
+                flag = False
+                break
+        if flag:
+            c.append(i)
+    cnt = [1]*len(c)
+    for ci in range(len(c)):
+        tmp = n
+        while tmp//c[ci]>0:
+            tmp //=c[ci]
+            cnt[ci]+=tmp   
+    ans=1
+    for i in cnt:
+        ans = (ans*i)%INF
+    print(ans)
