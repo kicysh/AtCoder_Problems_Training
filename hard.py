@@ -415,7 +415,6 @@ def problem_32():
     n = int(input())
     INF = 10**9+7
     c = [2]
-    d = 2
     for i in range(3,n+1,2):
         flag = True
         for ci in c:
@@ -451,3 +450,24 @@ def problem_34():
         print(ans)
     else:
         print(0)
+
+
+# 35: abc085_d
+def problem_35():
+    n,h = map(int,input().split())
+    a,b = [],[]
+    for _ in [0]*n:
+        aa,bb = map(int,input().split())
+        a.append(aa)
+        b.append(bb)
+    tmp = max(a)
+    b.sort(reverse=True)
+    ans = 0
+    for bi in b:
+        if bi > tmp:
+            h -= bi
+            ans +=1
+            if h <= 0:break
+        else: break
+    if h>0: ans += h//tmp+[1,0][h%tmp==0]
+    print(ans)
