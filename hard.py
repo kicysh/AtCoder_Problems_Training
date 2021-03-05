@@ -407,3 +407,20 @@ def problem_31():
     print(m)
     if m!=0:
         print(*ans)
+
+
+# 33: arc066_a
+def problem_33():
+    n = int(input())
+    *a, = map(int,input().split())
+    INF = 10**9+7
+    c = [0]*((n+1)//2)
+    for ai in a:
+        c[ai//2]+=1
+    if c==([1] + [2]*(len(c)-1)) or c==([2] + [2]*(len(c)-1)):
+        ans = 1
+        for ci in c:
+            ans =(ans*ci)%INF
+        print(ans)
+    else:
+        print(0)
