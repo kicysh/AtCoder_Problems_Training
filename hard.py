@@ -471,3 +471,31 @@ def problem_35():
         else: break
     if h>0: ans += h//tmp+[1,0][h%tmp==0]
     print(ans)
+
+
+# 37: ddcc2020_qual_c
+def problem_37():
+    h,w,_ = map(int,input().split())
+    s = [input() for _ in [0]*h]
+    c = [[0]*w for _ in [0]*h]
+    i,cnt = 0,0
+    for hi in range(h):
+        i += 1
+        flag = True
+        for wi in range(w):
+            if s[hi][wi]=='#':
+                if flag:
+                    flag = False
+                else:
+                    i += 1
+            c[hi][wi] = i
+        if flag:
+            i +=-1
+            if hi==cnt:
+                cnt = hi+1
+            else:
+                c[hi] = c[hi-1]
+    for i in range(cnt-1,-1,-1):
+        c[i] = c[cnt]
+    for ci in c:
+        print(*ci)
