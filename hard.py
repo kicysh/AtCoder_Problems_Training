@@ -537,3 +537,26 @@ def problem_39():
         else:
             w +=1
     print(min(ans))
+
+
+# 40: code_festival_2017_qualc_c
+def problem_40():
+    s = input()
+    sx = s.replace('x','')
+    if sx == sx[::-1]:
+        ans = 0
+        left,right = 0,len(s)-1
+        for i in range((len(sx)+1)//2):
+            tmp = 0
+            while s[left]!=sx[i]:
+                tmp +=1
+                left +=1
+            left += 1
+            while s[right]!=sx[i]:
+                tmp -=1
+                right -=1
+            right -=1
+            ans += abs(tmp)
+        print(ans)
+    else:
+        print(-1)
