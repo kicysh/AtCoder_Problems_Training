@@ -520,3 +520,20 @@ def problem_38():
                             c[hj+hd][wj+wd] = c[hj][wj]+1
                 ans = max(ans,max(max(c,key=max)))
     print(ans)
+
+
+# 39: tenka1_2019_c
+def problem_39():
+    n = int(input())
+    s = input()
+    ans = [0,0]
+    w,b = 0,0
+    for si in range(n-1,-1,-1):
+        if s[si]=='#':
+            b +=1
+            ans[1] = min(ans[1]+b,ans[0]+b)
+            ans[0]+=w
+            w,b = 0,0
+        else:
+            w +=1
+    print(min(ans))
