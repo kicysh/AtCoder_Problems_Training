@@ -560,3 +560,12 @@ def problem_40():
         print(ans)
     else:
         print(-1)
+
+
+# 41: arc102_a
+def problem_41():
+    n,k = map(int,input().split())
+    ans = (n//k)**3
+    if k%2==0:
+        ans += ((n+k//2)//k)**3
+    print(ans)
