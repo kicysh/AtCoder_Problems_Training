@@ -499,3 +499,24 @@ def problem_37():
         c[i] = c[cnt]
     for ci in c:
         print(*ci)
+
+# 38: abc151_d
+def problem_38():
+    from collections import deque
+    h,w = map(int,input().split())
+    s = ['#'*(w+2)]+['#'+input()+'#' for _ in range(h)]+['#'*(w+2)]
+    ans = 0
+    for hi in range(1,h+1):
+        for wi in range(1,w+1):
+            if s[hi][wi]=='.':
+                c,q = [[-1]*(w+2) for _ in range(h+2)],deque()
+                c[hi][wi] = 0
+                q.append((hi,wi))
+                while q:
+                    hj,wj=q.popleft()
+                    for hd,wd in [(0,-1),(0,1),(1,0),(-1,0)]:
+                        if s[hj+hd][wj+wd]=='.' and c[hj+hd][wj+wd]<0:
+                            q.append((hj+hd,wj+wd))
+                            c[hj+hd][wj+wd] = c[hj][wj]+1
+                ans = max(ans,max(max(c,key=max)))
+    print(ans)
