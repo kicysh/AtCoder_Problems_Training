@@ -569,3 +569,21 @@ def problem_41():
     if k%2==0:
         ans += ((n+k//2)//k)**3
     print(ans)
+
+
+# 42: abc064_d
+def problem_42():
+    _ = int(input())
+    s = input()
+    a,b = 0,0
+    for si in s[::-1]:
+        if si==')':
+            a +=1
+        else:
+            a = max(0,a-1)
+    for si in s:
+        if si=='(':
+            b +=1
+        else:
+            b = max(0,b-1)
+    print('('*a+s+')'*b)
