@@ -615,3 +615,18 @@ def problem_43():
         if flag:
             ans = max(ans,sum(cnt))
     print(ans)
+
+
+# 46: agc005_a
+def problem_46():
+    x = input()
+    ans = len(x)
+    cnt = 0
+    for xi in x:
+        if xi=='S':
+            cnt +=1
+        else:
+            if cnt>0:
+                ans -=2
+                cnt -=1
+    print(ans)
