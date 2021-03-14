@@ -587,3 +587,31 @@ def problem_42():
         else:
             b = max(0,b-1)
     print('('*a+s+')'*b)
+
+
+# 44: abc147_c
+def problem_43():
+    n = int(input())
+    xy = []
+    ans = 0
+    for _ in [0]*n:
+        a = int(input())
+        xy.append([list(map(int,input().split())) for _ in [0]*a])
+    for i in range(2**n):
+        cnt = [0]*n
+        for ci in range(n):
+            cnt[ci] = i%2
+            i //= 2
+        flag = True
+        for ci in range(n):
+            if cnt[ci] == 1:
+                for x,y in xy[ci]:
+                    x -=1
+                    if (y==1 and cnt[x]==0) or (y==0 and cnt[x]==1):
+                        flag = False
+                        break
+                else:
+                    continue
+        if flag:
+            ans = max(ans,sum(cnt))
+    print(ans)
