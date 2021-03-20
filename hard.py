@@ -630,3 +630,19 @@ def problem_46():
                 ans -=2
                 cnt -=1
     print(ans)
+
+
+# 49: abc156_d
+def problem_49():
+    n,a,b = map(int,input().split())
+    INF = 10**9+7
+    a,b = min(n-a,a),min(n-b,b)
+    def func(x):
+        s=t=1
+        for i in range(x):
+            s *= i+1
+            s %= INF
+            t *= n-i
+            t %= INF
+        return t*pow(s,INF-2,INF)%INF
+    print((pow(2,n,INF)-1-func(a)-func(b))%INF)
