@@ -646,3 +646,20 @@ def problem_49():
             t %= INF
         return t*pow(s,INF-2,INF)%INF
     print((pow(2,n,INF)-1-func(a)-func(b))%INF)
+
+
+# 50: abc145_d
+def problem_50():
+    x,y = map(int,input().split())
+    x,y = max(x,y),min(x,y)
+    xy = x-y
+    if (y-xy)%3==0 and (y-xy)>=0:
+        tmp = ((y-xy)//3)*2+xy
+        i,j = 1,1
+        INF = 10**9+7
+        for ii in range((y-xy)//3):
+            i = i*(tmp-ii)%INF
+            j = j*(ii+1)%INF
+        print((i*pow(j,INF-2,INF))%INF)
+    else:
+        print(0)
