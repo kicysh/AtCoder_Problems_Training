@@ -648,7 +648,7 @@ def problem_49():
     print((pow(2,n,INF)-1-func(a)-func(b))%INF)
 
 
-# 50: abc145_d
+# 51: abc145_d
 def problem_50():
     x,y = map(int,input().split())
     x,y = max(x,y),min(x,y)
@@ -663,3 +663,14 @@ def problem_50():
         print((i*pow(j,INF-2,INF))%INF)
     else:
         print(0)
+
+
+# 52: abc112_d
+def problem_52():
+    n,m = map(int,input().split())
+    ans = 1
+    for i in range(round(m/n),1,-1):
+        if m%i==0:
+            ans = i
+            break
+    print(ans)
