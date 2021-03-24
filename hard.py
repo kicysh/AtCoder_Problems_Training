@@ -674,3 +674,17 @@ def problem_52():
             ans = i
             break
     print(ans)
+
+
+# 53: diverta2019_2_b
+def problem_53():
+    n = int(input())
+    xy = sorted([list(map(int,input().split())) for _ in [0]*n])
+    d = dict()
+    for i in range(n):
+        for j in range(i):
+            xi,yi = xy[i]
+            xj,yj = xy[j]
+            d.setdefault((xi-xj,yi-yj),0)
+            d[(xi-xj,yi-yj)] += 1
+    print(1 if n==1 else n-max(d.values()))
