@@ -688,3 +688,13 @@ def problem_53():
             d.setdefault((xi-xj,yi-yj),0)
             d[(xi-xj,yi-yj)] += 1
     print(1 if n==1 else n-max(d.values()))
+
+
+# 54: abc160_e
+def problem_54():
+    x,y,_,_,c = map(int,input().split())
+    p = sorted(map(int,input().split()), reverse=True)
+    q = sorted(map(int,input().split()), reverse=True)
+    r = sorted(map(int,input().split()), reverse=True)
+    pqr = sorted(p[:x]+q[:y]+r[:min(x+y,c)],reverse=True)
+    print(sum(pqr[:x+y]))
