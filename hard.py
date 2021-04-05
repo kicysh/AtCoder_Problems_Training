@@ -710,3 +710,26 @@ def problem_55():
         ans += min((xi-p)*a,b)
         p = xi
     print(ans)
+
+
+# 56: apc001_b
+def problem_56():
+    _ = int(input())
+    *a, = map(int,input().split())
+    *b, = map(int,input().split())
+    d = sum(b)-sum(a)
+    if d<0:
+        print('No')
+    elif d==0:
+        print('Yes' if a==b else 'No')
+    else:
+        cnt1,cnt2 = 0,0
+        for ai,bi in zip(a,b):
+            if ai>bi:
+                cnt1 += ai-bi
+            else:
+                cnt2 += (bi-ai)//2
+        if cnt1<=cnt2 and cnt1<=d:
+            print('Yes')
+        else:
+            print('No')
