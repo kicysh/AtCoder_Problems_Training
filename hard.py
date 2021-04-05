@@ -698,3 +698,15 @@ def problem_54():
     r = sorted(map(int,input().split()), reverse=True)
     pqr = sorted(p[:x]+q[:y]+r[:min(x+y,c)],reverse=True)
     print(sum(pqr[:x+y]))
+
+
+# 55: arc067_b
+def problem_55():
+    _,a,b = map(int,input().split())
+    *x, = map(int,input().split())
+    ans = 0
+    p = x[0]
+    for xi in x[1:]:
+        ans += min((xi-p)*a,b)
+        p = xi
+    print(ans)
