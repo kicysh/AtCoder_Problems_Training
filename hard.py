@@ -749,3 +749,17 @@ def problem_57():
     for v in c.values():
         ans += v*(v-1)//2
     print(ans)
+
+
+# 58: diverta2019_d
+def problem_58():
+    ans = 0
+    n = int(input())
+    for i in range(1,int(n**0.5)+1):
+        if (n-i)%i==0:
+            m = (n-i)//i
+            if i < m:
+                ans += m
+            else:
+                break
+    print(ans)
