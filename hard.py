@@ -733,3 +733,19 @@ def problem_56():
             print('Yes')
         else:
             print('No')
+
+
+# 57: agc023_a
+def problem_57():
+    from collections import Counter
+    n = int(input())
+    *a, = map(int,input().split())
+    for ai in range(1,n):
+        a[ai] += a[ai-1]
+    c = Counter(a)
+    t = c.setdefault(0,0)
+    ans = t*(t+1)//2
+    c[0] = 0
+    for v in c.values():
+        ans += v*(v-1)//2
+    print(ans)
